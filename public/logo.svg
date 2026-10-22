@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" width="100%" height="100%">
+  <defs>
+    <filter id="shieldShadow" x="-10%" y="-10%" width="120%" height="120%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <linearGradient id="flagBlack" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1F2937"/>
+    </linearGradient>
+    <linearGradient id="flagRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#990000"/>
+      <stop offset="50%" stop-color="#CE1126"/>
+      <stop offset="100%" stop-color="#990000"/>
+    </linearGradient>
+    <linearGradient id="flagGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#065F17"/>
+      <stop offset="50%" stop-color="#0A7B24"/>
+      <stop offset="100%" stop-color="#065F17"/>
+    </linearGradient>
+    <linearGradient id="spearMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3F4F6"/>
+      <stop offset="50%" stop-color="#D1D5DB"/>
+      <stop offset="100%" stop-color="#9CA3AF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crossed Traditional Spears -->
+  <!-- Spear 1: Top-Left to Bottom-Right -->
+  <g id="spear1">
+    <!-- Shaft -->
+    <line x1="28" y1="28" x2="172" y2="172" stroke="#4B5563" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Spear Tip (Top-Left) -->
+    <path d="M18 18 L36 24 L24 36 Z" fill="url(#spearMetal)" stroke="#374151" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M18 18 L30 30" stroke="#FFFFFF" stroke-width="1.5"/>
+    <!-- Spear Butt (Bottom-Right) -->
+    <path d="M172 172 L180 180" stroke="#6B7280" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Spear 2: Top-Right to Bottom-Left -->
+  <g id="spear2">
+    <!-- Shaft -->
+    <line x1="172" y1="28" x2="28" y2="172" stroke="#4B5563" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Spear Tip (Top-Right) -->
+    <path d="M182 18 L164 24 L176 36 Z" fill="url(#spearMetal)" stroke="#374151" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M182 18 L170 30" stroke="#FFFFFF" stroke-width="1.5"/>
+    <!-- Spear Butt (Bottom-Left) -->
+    <path d="M28 172 L20 180" stroke="#6B7280" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Traditional Maasai Shield -->
+  <g filter="url(#shieldShadow)">
+    <!-- Base Shield Shape -->
+    <!-- Curved traditional Maasai contour: Points at top (100, 20) and bottom (100, 180), bulging to (60, 100) and (140, 100) -->
+    <path d="M100 20 C145 50, 150 150, 100 180 C50 150, 55 50, 100 20 Z" fill="#000000" stroke="#111827" stroke-width="2"/>
+
+    <!-- Left Black Wing / Right Black Wing -->
+    <!-- Red Center Oval Band -->
+    <path d="M100 22 C122 52, 126 148, 100 178 C74 148, 78 52, 100 22 Z" fill="url(#flagRed)"/>
+
+    <!-- White Contour Stripes & Chevron Markings -->
+    <path d="M100 25 C116 55, 119 145, 100 175" stroke="#FFFFFF" stroke-width="3.5" fill="none"/>
+    <path d="M100 25 C84 55, 81 145, 100 175" stroke="#FFFFFF" stroke-width="3.5" fill="none"/>
+
+    <!-- Central Vertical Ridge / Spine -->
+    <line x1="100" y1="24" x2="100" y2="176" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="100" y1="35" x2="100" y2="165" stroke="#111827" stroke-width="1.5"/>
+
+    <!-- Traditional Central Shield Boss (White Oval Disc) -->
+    <ellipse cx="100" cy="100" rx="9" ry="11" fill="#FFFFFF" stroke="#111827" stroke-width="1.5"/>
+    <ellipse cx="100" cy="100" rx="4" ry="5" fill="#CE1126"/>
+
+    <!-- Left & Right Shield Side Ornaments (White Maasai geometric markings) -->
+    <!-- Top-left crescent/dots -->
+    <circle cx="82" cy="70" r="3" fill="#FFFFFF"/>
+    <circle cx="80" cy="85" r="3" fill="#FFFFFF"/>
+    <circle cx="80" cy="115" r="3" fill="#FFFFFF"/>
+    <circle cx="82" cy="130" r="3" fill="#FFFFFF"/>
+
+    <!-- Top-right crescent/dots -->
+    <circle cx="118" cy="70" r="3" fill="#FFFFFF"/>
+    <circle cx="120" cy="85" r="3" fill="#FFFFFF"/>
+    <circle cx="120" cy="115" r="3" fill="#FFFFFF"/>
+    <circle cx="118" cy="130" r="3" fill="#FFFFFF"/>
+
+    <!-- Green Flag Accent Ribbon at Base of Shield -->
+    <path d="M78 140 C85 146, 115 146, 122 140" stroke="url(#flagGreen)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M82 60 C88 54, 112 54, 118 60" stroke="url(#flagGreen)" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>
+

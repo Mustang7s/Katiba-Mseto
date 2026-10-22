@@ -1,0 +1,762 @@
+[
+  {
+    "chapter_number": 1,
+    "chapter_title": "Sovereignty of the People and Supremacy of this Constitution",
+    "chapter_summary": "Declares that all sovereign power belongs to the people of Kenya and can only be exercised in accordance with this Constitution. Establishes the Constitution as the supreme law of the Republic.",
+    "article_range": "Articles 1 - 3",
+    "article_count": 3,
+    "category": "Governance",
+    "articles": [
+      {
+        "article_number": 1,
+        "article_title": "Sovereignty of the people",
+        "content": "All sovereign power belongs to the people of Kenya and shall be exercised only in accordance with this Constitution.",
+        "clauses": [
+          {
+            "clause_number": "1",
+            "content": "All sovereign power belongs to the people of Kenya and shall be exercised only in accordance with this Constitution.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "2",
+            "content": "The people may exercise their sovereign power either directly or through their democratically elected representatives.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "3",
+            "content": "Sovereign power under this Constitution is delegated to Parliament and the legislative assemblies in the county governments, the national executive and executive structures in the county governments, and the Judiciary and independent tribunals.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "4",
+            "content": "The sovereign power of the people is exercised at the national level and the county level.",
+            "sub_clauses": []
+          }
+        ]
+      },
+      {
+        "article_number": 2,
+        "article_title": "Supremacy of this Constitution",
+        "content": "This Constitution is the supreme law of the Republic and binds all persons and all State organs at both levels of government.",
+        "clauses": [
+          {
+            "clause_number": "1",
+            "content": "This Constitution is the supreme law of the Republic and binds all persons and all State organs at both levels of government.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "2",
+            "content": "No person may claim or exercise State authority except as authorised under this Constitution.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "3",
+            "content": "The validity or legality of this Constitution is not subject to challenge by or before any court or other State organ.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "4",
+            "content": "Any law, including customary law, that is inconsistent with this Constitution is void to the extent of the inconsistency, and any act or omission in contravention of this Constitution is invalid.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "5",
+            "content": "The general rules of international law shall form part of the law of Kenya.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "6",
+            "content": "Any treaty or convention ratified by Kenya shall form part of the law of Kenya under this Constitution.",
+            "sub_clauses": []
+          }
+        ]
+      },
+      {
+        "article_number": 3,
+        "article_title": "Defence of this Constitution",
+        "content": "Every person has an obligation to respect, uphold and defend this Constitution.",
+        "clauses": [
+          {
+            "clause_number": "1",
+            "content": "Every person has an obligation to respect, uphold and defend this Constitution.",
+            "sub_clauses": []
+          },
+          {
+            "clause_number": "2",
+            "content": "Any attempt to establish a government otherwise than in compliance with this Constitution is unlawful.",
+            "sub_clauses": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_number": 2,
+    "chapter_title": "The Republic",
+    "chapter_summary": "Defines Kenya as a multi-party democratic State founded on national values and principles of governance, sets the territory, symbols, languages, national days, and separation of State and religion.",
+    "article_range": "Articles 4 - 11",
+    "article_count": 8,
+    "category": "Governance",
+    "articles": [
+      {
+        "article_number": 4,
+        "article_title": "Declaration of the Republic",
+        "content": "Kenya is a sovereign Republic. The Republic of Kenya is a multi-party democratic State founded on the national values and principles of governance referred to in Article 10.",
+        "clauses": [
+          { "clause_number": "1", "content": "Kenya is a sovereign Republic.", "sub_clauses": [] },
+          { "clause_number": "2", "content": "The Republic of Kenya is a multi-party democratic State founded on the national values and principles of governance referred to in Article 10.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 5,
+        "article_title": "Territory of Kenya",
+        "content": "Kenya consists of the territory and territorial waters comprising Kenya on the effective date, and any additional territory and territorial waters defined by an Act of Parliament.",
+        "clauses": [
+          { "clause_number": "1", "content": "Kenya consists of the territory and territorial waters comprising Kenya on the effective date, and any additional territory and territorial waters defined by an Act of Parliament.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 6,
+        "article_title": "Devolution and access to services",
+        "content": "The territory of Kenya is divided into the counties specified in the First Schedule. The governments at the national and county levels are distinct and inter-dependent and shall conduct their mutual relations on the basis of consultation and co-operation.",
+        "clauses": [
+          { "clause_number": "1", "content": "The territory of Kenya is divided into the counties specified in the First Schedule.", "sub_clauses": [] },
+          { "clause_number": "2", "content": "The governments at the national and county levels are distinct and inter-dependent and shall conduct their mutual relations on the basis of consultation and co-operation.", "sub_clauses": [] },
+          { "clause_number": "3", "content": "A national State organ shall ensure reasonable access to its services in all parts of the Republic.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 7,
+        "article_title": "National, official and other languages",
+        "content": "The national language of the Republic is Kiswahili. The official languages of the Republic are Kiswahili and English. The State shall promote and protect the diversity of language of the people of Kenya.",
+        "clauses": [
+          { "clause_number": "1", "content": "The national language of the Republic is Kiswahili.", "sub_clauses": [] },
+          { "clause_number": "2", "content": "The official languages of the Republic are Kiswahili and English.", "sub_clauses": [] },
+          { "clause_number": "3", "content": "The State shall promote and protect the diversity of language of the people of Kenya, and promote the development and use of indigenous languages, Kenyan Sign language, Braille and other communication formats and technologies.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 8,
+        "article_title": "State and religion",
+        "content": "There shall be no State religion.",
+        "clauses": [
+          { "clause_number": "1", "content": "There shall be no State religion.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 9,
+        "article_title": "National symbols and national days",
+        "content": "The national symbols of the Republic are the national flag, national anthem, coat of arms, and public seal. The national days are Madaraka Day (1 June), Mashujaa Day (20 October), and Jamhuri Day (12 December).",
+        "clauses": [
+          { "clause_number": "1", "content": "The national symbols of the Republic are the national flag, the national anthem, the coat of arms, and the public seal.", "sub_clauses": [] },
+          { "clause_number": "2", "content": "The national days are Madaraka Day (1st June), Mashujaa Day (20th October), and Jamhuri Day (12th December).", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 10,
+        "article_title": "National values and principles of governance",
+        "content": "The national values and principles of governance include patriotism, national unity, sharing and devolution of power, the rule of law, democracy and participation of the people; human dignity, equity, social justice, inclusiveness, equality, human rights, non-discrimination and protection of the marginalised; good governance, integrity, transparency and accountability; and sustainable development.",
+        "clauses": [
+          { "clause_number": "1", "content": "The national values and principles of governance bind all State organs, State officers, public officers and all persons whenever any of them applies or interprets this Constitution, enacts, applies or interprets any law, or makes or implements public policy decisions.", "sub_clauses": [] },
+          { "clause_number": "2", "content": "The national values and principles of governance include: patriotism, national unity, sharing and devolution of power, the rule of law, democracy and participation of the people; human dignity, equity, social justice, inclusiveness, equality, human rights, non-discrimination and protection of the marginalised; good governance, integrity, transparency and accountability; and sustainable development.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 11,
+        "article_title": "Culture",
+        "content": "This Constitution recognises culture as the foundation of the nation and as the cumulative civilization of the Kenyan people and nation.",
+        "clauses": [
+          { "clause_number": "1", "content": "This Constitution recognises culture as the foundation of the nation and as the cumulative civilization of the Kenyan people and nation.", "sub_clauses": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_number": 3,
+    "chapter_title": "Citizenship",
+    "chapter_summary": "Covers acquisition, retention, and revocation of Kenyan citizenship by birth or registration, protects dual citizenship, and guarantees passports and identification documents for all citizens.",
+    "article_range": "Articles 12 - 18",
+    "article_count": 7,
+    "category": "Governance",
+    "articles": [
+      {
+        "article_number": 12,
+        "article_title": "Entitlements of citizens",
+        "content": "Every citizen is entitled to the rights, privileges and benefits of citizenship, subject to the limits provided or permitted by this Constitution; and a Kenyan passport and any document of registration or identification issued by the State.",
+        "clauses": [
+          { "clause_number": "1", "content": "Every citizen is entitled to the rights, privileges and benefits of citizenship, subject to the limits provided or permitted by this Constitution; and a Kenyan passport and to any document of registration or identification issued by the State to citizens.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 13,
+        "article_title": "Retention and acquisition of citizenship",
+        "content": "Every person who was a citizen immediately before the effective date retains that citizenship. Citizenship may be acquired by birth or registration.",
+        "clauses": [
+          { "clause_number": "1", "content": "Every person who was a citizen immediately before the effective date retains that citizenship.", "sub_clauses": [] },
+          { "clause_number": "2", "content": "Citizenship may be acquired by birth or registration.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 14,
+        "article_title": "Citizenship by birth",
+        "content": "A person is a citizen by birth if on the day of the person's birth, whether or not the person is born in Kenya, either the mother or the father of the person is a citizen.",
+        "clauses": [
+          { "clause_number": "1", "content": "A person is a citizen by birth if on the day of the person's birth, whether or not the person is born in Kenya, either the mother or the father of the person is a citizen.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 15,
+        "article_title": "Citizenship by registration",
+        "content": "A person who has been married to a citizen for a period of at least seven years, or a person who has lawfully resided in Kenya for a continuous period of at least seven years, may apply to be registered as a citizen.",
+        "clauses": [
+          { "clause_number": "1", "content": "A person who has been married to a citizen for a period of at least seven years may apply to be registered as a citizen.", "sub_clauses": [] },
+          { "clause_number": "2", "content": "A person who has lawfully resided in Kenya for a continuous period of at least seven years may apply to be registered as a citizen.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 16,
+        "article_title": "Dual citizenship",
+        "content": "A citizen by birth does not lose citizenship by acquiring the citizenship of another country.",
+        "clauses": [
+          { "clause_number": "1", "content": "A citizen by birth does not lose citizenship by acquiring the citizenship of another country.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 17,
+        "article_title": "Revocation of citizenship",
+        "content": "The Cabinet Secretary may revoke citizenship acquired by registration if obtained by fraud, false representation, concealment of material facts, or disloyalty during war.",
+        "clauses": [
+          { "clause_number": "1", "content": "Citizenship acquired by registration may be revoked if obtained by fraud, false representation or concealment of any material fact.", "sub_clauses": [] }
+        ]
+      },
+      {
+        "article_number": 18,
+        "article_title": "Legislation on citizenship",
+        "content": "Parliament shall enact legislation providing for the conditions and procedures for citizenship.",
+        "clauses": [
+          { "clause_number": "1", "content": "Parliament shall enact legislation providing for the conditions on which citizenship may be acquired and lost.", "sub_clauses": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_number": 4,
+    "chapter_title": "The Bill of Rights",
+    "chapter_summary": "An integral cornerstone of Kenya's democratic state. Enshrines fundamental human rights and freedoms: civil, political, economic, social, and cultural rights, and protects vulnerable and marginalized groups.",
+    "article_range": "Articles 19 - 59",
+    "article_count": 41,
+    "category": "Rights",
+    "parts": [
+      {
+        "part_number": 1,
+        "part_title": "General Provisions Relating to the Bill of Rights",
+        "articles": [
+          { "article_number": 19, "article_title": "Rights and fundamental freedoms" },
+          { "article_number": 20, "article_title": "Application of Bill of Rights" },
+          { "article_number": 21, "article_title": "Implementation of rights and fundamental freedoms" },
+          { "article_number": 22, "article_title": "Enforcement of Bill of Rights" },
+          { "article_number": 23, "article_title": "Authority of courts to uphold and enforce the Bill of Rights" },
+          { "article_number": 24, "article_title": "Limitation of rights and fundamental freedoms" },
+          { "article_number": 25, "article_title": "Fundamental rights and freedoms that may not be limited" }
+        ]
+      },
+      {
+        "part_number": 2,
+        "part_title": "Rights and Fundamental Freedoms",
+        "articles": [
+          { "article_number": 26, "article_title": "Right to life" },
+          { "article_number": 27, "article_title": "Equality and freedom from discrimination" },
+          { "article_number": 28, "article_title": "Human dignity" },
+          { "article_number": 29, "article_title": "Freedom and security of the person" },
+          { "article_number": 30, "article_title": "Slavery, servitude and forced labour" },
+          { "article_number": 31, "article_title": "Privacy" },
+          { "article_number": 32, "article_title": "Freedom of conscience, religion, belief and opinion" },
+          { "article_number": 33, "article_title": "Freedom of expression" },
+          { "article_number": 34, "article_title": "Freedom of the media" },
+          { "article_number": 35, "article_title": "Access to information" },
+          { "article_number": 36, "article_title": "Freedom of association" },
+          { "article_number": 37, "article_title": "Assembly, demonstration, picketing and petition" },
+          { "article_number": 38, "article_title": "Political rights" },
+          { "article_number": 39, "article_title": "Freedom of movement and residence" },
+          { "article_number": 40, "article_title": "Protection of right to property" },
+          { "article_number": 41, "article_title": "Labour relations" },
+          { "article_number": 42, "article_title": "Environment" },
+          { "article_number": 43, "article_title": "Economic and social rights" },
+          { "article_number": 44, "article_title": "Language and culture" },
+          { "article_number": 45, "article_title": "Family" },
+          { "article_number": 46, "article_title": "Consumer rights" },
+          { "article_number": 47, "article_title": "Fair administrative action" },
+          { "article_number": 48, "article_title": "Access to justice" },
+          { "article_number": 49, "article_title": "Rights of arrested persons" }
+        ]
+      },
+      {
+        "part_number": 3,
+        "part_title": "Specific Application of Rights",
+        "articles": [
+          { "article_number": 50, "article_title": "Fair hearing" },
+          { "article_number": 51, "article_title": "Rights of persons detained, held in custody or imprisoned" },
+          { "article_number": 52, "article_title": "Interpretation of Part" },
+          { "article_number": 53, "article_title": "Children" },
+          { "article_number": 54, "article_title": "Persons with disabilities" },
+          { "article_number": 55, "article_title": "Youth" },
+          { "article_number": 56, "article_title": "Minorities and marginalised groups" },
+          { "article_number": 57, "article_title": "Older members of society" }
+        ]
+      },
+      {
+        "part_number": 4,
+        "part_title": "State of Emergency",
+        "articles": [
+          { "article_number": 58, "article_title": "State of emergency" }
+        ]
+      },
+      {
+        "part_number": 5,
+        "part_title": "Kenya National Human Rights and Equality Commission",
+        "articles": [
+          { "article_number": 59, "article_title": "Kenya National Human Rights and Equality Commission" }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_number": 5,
+    "chapter_title": "Land and Environment",
+    "chapter_summary": "Establishes principles of land ownership and use, classifies land into public, community, and private, regulates landholding by non-citizens, creates the National Land Commission, and mandates environmental conservation.",
+    "article_range": "Articles 60 - 72",
+    "article_count": 13,
+    "category": "Land",
+    "parts": [
+      {
+        "part_number": 1,
+        "part_title": "Land",
+        "articles": [
+          { "article_number": 60, "article_title": "Principles of land policy" },
+          { "article_number": 61, "article_title": "Classification of land" },
+          { "article_number": 62, "article_title": "Public land" },
+          { "article_number": 63, "article_title": "Community land" },
+          { "article_number": 64, "article_title": "Private land" },
+          { "article_number": 65, "article_title": "Landholding by non-citizens" },
+          { "article_number": 66, "article_title": "Regulation of land use and property" },
+          { "article_number": 67, "article_title": "National Land Commission" },
+          { "article_number": 68, "article_title": "Legislation on land" }
+        ]
+      },
+      {
+        "part_number": 2,
+        "part_title": "Environment and Natural Resources",
+        "articles": [
+          { "article_number": 69, "article_title": "Obligations in respect of the environment" },
+          { "article_number": 70, "article_title": "Enforcement of environmental rights" },
+          { "article_number": 71, "article_title": "Agreements relating to natural resources" },
+          { "article_number": 72, "article_title": "Legislation relating to the environment" }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_number": 6,
+    "chapter_title": "Leadership and Integrity",
+    "chapter_summary": "Sets high ethical standards for state officers: public trust, selfless service, financial probity, bans foreign bank accounts for State officers, conflicts of interest, and empowers the Ethics and Anti-Corruption Commission.",
+    "article_range": "Articles 73 - 80",
+    "article_count": 8,
+    "category": "Governance",
+    "articles": [
+      { "article_number": 73, "article_title": "Responsibilities of leadership" },
+      { "article_number": 74, "article_title": "Oath of office of State officers" },
+      { "article_number": 75, "article_title": "Conduct of State officers" },
+      { "article_number": 76, "article_title": "Financial probity of State officers" },
+      { "article_number": 77, "article_title": "Restriction on activities of State officers" },
+      { "article_number": 78, "article_title": "Citizenship and leadership" },
+      { "article_number": 79, "article_title": "Ethics and Anti-Corruption Commission" },
+      { "article_number": 80, "article_title": "Legislation on leadership" }
+    ]
+  },
+  {
+    "chapter_number": 7,
+    "chapter_title": "Representation of the People",
+    "chapter_summary": "Governs the electoral system, voting rights, freedom of political parties, two-thirds gender principle, Independent Electoral and Boundaries Commission (IEBC), and boundaries delimitation.",
+    "article_range": "Articles 81 - 92",
+    "article_count": 12,
+    "category": "Governance",
+    "parts": [
+      {
+        "part_number": 1,
+        "part_title": "Electoral System and Process",
+        "articles": [
+          { "article_number": 81, "article_title": "General principles for the electoral system" },
+          { "article_number": 82, "article_title": "Legislation on elections" },
+          { "article_number": 83, "article_title": "Registration as a voter" },
+          { "article_number": 84, "article_title": "Candidates for election and voting" },
+          { "article_number": 85, "article_title": "Eligibility to stand as independent candidate" },
+          { "article_number": 86, "article_title": "Voting" },
+          { "article_number": 87, "article_title": "Electoral disputes" }
+        ]
+      },
+      {
+        "part_number": 2,
+        "part_title": "IEBC and Delimitation of Electoral Units",
+        "articles": [
+          { "article_number": 88, "article_title": "Independent Electoral and Boundaries Commission" },
+          { "article_number": 89, "article_title": "Delimitation of electoral units" },
+          { "article_number": 90, "article_title": "Allocation of party list seats" }
+        ]
+      },
+      {
+        "part_number": 3,
+        "part_title": "Political Parties",
+        "articles": [
+          { "article_number": 91, "article_title": "Basic requirements for political parties" },
+          { "article_number": 92, "article_title": "Legislation on political parties" }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter_number": 8,
+    "chapter_title": "The Legislature",
+    "chapter_summary": "Establishes a bicameral Parliament consisting of the National Assembly and the Senate, defines their legislative authority, membership, law-making procedures, and public participation requirements.",
+    "article_range": "Articles 93 - 128",
+    "article_count": 36,
+    "category": "Governance",
+    "parts": [
+      { "part_number": 1, "part_title": "Establishment and Role of Parliament", "articles": [
+        { "article_number": 93, "article_title": "Establishment of Parliament" },
+        { "article_number": 94, "article_title": "Role of Parliament" },
+        { "article_number": 95, "article_title": "Role of the National Assembly" },
+        { "article_number": 96, "article_title": "Role of the Senate" }
+      ]},
+      { "part_number": 2, "part_title": "Composition and Membership of Parliament", "articles": [
+        { "article_number": 97, "article_title": "Membership of the National Assembly" },
+        { "article_number": 98, "article_title": "Membership of the Senate" },
+        { "article_number": 99, "article_title": "Qualifications and disqualifications for election as member of Parliament" },
+        { "article_number": 100, "article_title": "Promotion of representation of marginalised groups" },
+        { "article_number": 101, "article_title": "Election of members of Parliament" },
+        { "article_number": 102, "article_title": "Term of Parliament" },
+        { "article_number": 103, "article_title": "Vacation of office of member of Parliament" },
+        { "article_number": 104, "article_title": "Right of recall" },
+        { "article_number": 105, "article_title": "Determination of questions of membership" }
+      ]},
+      { "part_number": 3, "part_title": "Offices of Parliament", "articles": [
+        { "article_number": 106, "article_title": "Speakers and Deputy Speakers of Parliament" },
+        { "article_number": 107, "article_title": "Presiding in Parliament" },
+        { "article_number": 108, "article_title": "Party leaders in Parliament" }
+      ]},
+      { "part_number": 4, "part_title": "Procedures for Enacting Legislation", "articles": [
+        { "article_number": 109, "article_title": "Exercise of legislative powers" },
+        { "article_number": 110, "article_title": "Bills concerning county government" },
+        { "article_number": 111, "article_title": "Special Bills concerning county governments" },
+        { "article_number": 112, "article_title": "Ordinary Bills concerning county governments" },
+        { "article_number": 113, "article_title": "Mediation committees" },
+        { "article_number": 114, "article_title": "Money Bills" },
+        { "article_number": 115, "article_title": "Presidential assent and referrals" },
+        { "article_number": 116, "article_title": "Coming into force of laws" }
+      ]},
+      { "part_number": 5, "part_title": "Parliament's General Procedures and Rules", "articles": [
+        { "article_number": 117, "article_title": "Powers, privileges and immunities" },
+        { "article_number": 118, "article_title": "Public access and participation" },
+        { "article_number": 119, "article_title": "Right to petition Parliament" },
+        { "article_number": 120, "article_title": "Official languages of Parliament" },
+        { "article_number": 121, "article_title": "Quorum" },
+        { "article_number": 122, "article_title": "Voting in Parliament" },
+        { "article_number": 123, "article_title": "Decisions of Senate" },
+        { "article_number": 124, "article_title": "Committees and Standing Orders" },
+        { "article_number": 125, "article_title": "Power to call for evidence" }
+      ]},
+      { "part_number": 6, "part_title": "Miscellaneous", "articles": [
+        { "article_number": 126, "article_title": "Location of sittings of Parliament" },
+        { "article_number": 127, "article_title": "Parliamentary Service Commission" },
+        { "article_number": 128, "article_title": "Clerks and staff of Parliament" }
+      ]}
+    ]
+  },
+  {
+    "chapter_number": 9,
+    "chapter_title": "The Executive",
+    "chapter_summary": "Details the structure of the National Executive: the President (Head of State and Government, Commander-in-Chief), Deputy President, Cabinet, Attorney-General, and Director of Public Prosecutions (DPP).",
+    "article_range": "Articles 129 - 158",
+    "article_count": 30,
+    "category": "Governance",
+    "parts": [
+      { "part_number": 1, "part_title": "Principles and Structure of the National Executive", "articles": [
+        { "article_number": 129, "article_title": "Principles of executive authority" },
+        { "article_number": 130, "article_title": "The National Executive" }
+      ]},
+      { "part_number": 2, "part_title": "The President and Deputy President", "articles": [
+        { "article_number": 131, "article_title": "Authority of the President" },
+        { "article_number": 132, "article_title": "Functions of the President" },
+        { "article_number": 133, "article_title": "Power of mercy" },
+        { "article_number": 134, "article_title": "Exercise of presidential powers during temporary absence" },
+        { "article_number": 135, "article_title": "Decisions of the President" },
+        { "article_number": 136, "article_title": "Election of the President" },
+        { "article_number": 137, "article_title": "Qualifications and disqualifications for election as President" },
+        { "article_number": 138, "article_title": "Procedure at presidential election" },
+        { "article_number": 139, "article_title": "Death before assuming office" },
+        { "article_number": 140, "article_title": "Questions as to validity of presidential election" },
+        { "article_number": 141, "article_title": "Assumption of office of President" },
+        { "article_number": 142, "article_title": "Term of office of President" },
+        { "article_number": 143, "article_title": "Protection from legal proceedings" },
+        { "article_number": 144, "article_title": "Removal of President on grounds of incapacity" },
+        { "article_number": 145, "article_title": "Removal of President by impeachment" },
+        { "article_number": 146, "article_title": "Vacancy in the office of President" },
+        { "article_number": 147, "article_title": "Functions of the Deputy President" },
+        { "article_number": 148, "article_title": "Election and swearing-in of Deputy President" },
+        { "article_number": 149, "article_title": "Vacancy in the office of Deputy President" },
+        { "article_number": 150, "article_title": "Removal of Deputy President" },
+        { "article_number": 151, "article_title": "Remuneration and benefits of President and Deputy President" }
+      ]},
+      { "part_number": 3, "part_title": "The Cabinet", "articles": [
+        { "article_number": 152, "article_title": "Cabinet" },
+        { "article_number": 153, "article_title": "Decisions, responsibility and accountability of the Cabinet" },
+        { "article_number": 154, "article_title": "Secretary to the Cabinet" },
+        { "article_number": 155, "article_title": "Principal Secretaries" }
+      ]},
+      { "part_number": 4, "part_title": "Other Offices", "articles": [
+        { "article_number": 156, "article_title": "Attorney-General" },
+        { "article_number": 157, "article_title": "Director of Public Prosecutions" },
+        { "article_number": 158, "article_title": "Removal and resignation of Director of Public Prosecutions" }
+      ]}
+    ]
+  },
+  {
+    "chapter_number": 10,
+    "chapter_title": "Judiciary",
+    "chapter_summary": "Vests judicial authority in the courts and tribunals, guarantees judicial independence, establishes superior courts (Supreme Court, Court of Appeal, High Court) and subordinate courts, and creates the Judicial Service Commission (JSC).",
+    "article_range": "Articles 159 - 173",
+    "article_count": 15,
+    "category": "Justice",
+    "parts": [
+      { "part_number": 1, "part_title": "Judicial Authority and Legal System", "articles": [
+        { "article_number": 159, "article_title": "Judicial authority" },
+        { "article_number": 160, "article_title": "Independence of the Judiciary" },
+        { "article_number": 161, "article_title": "Judicial offices and officers" },
+        { "article_number": 162, "article_title": "System of courts" }
+      ]},
+      { "part_number": 2, "part_title": "Superior Courts", "articles": [
+        { "article_number": 163, "article_title": "Supreme Court" },
+        { "article_number": 164, "article_title": "Court of Appeal" },
+        { "article_number": 165, "article_title": "High Court" },
+        { "article_number": 166, "article_title": "Appointment of Chief Justice, Deputy Chief Justice and other judges" },
+        { "article_number": 167, "article_title": "Tenure of office of the Chief Justice and other judges" },
+        { "article_number": 168, "article_title": "Removal from office" }
+      ]},
+      { "part_number": 3, "part_title": "Subordinate Courts", "articles": [
+        { "article_number": 169, "article_title": "Subordinate courts" },
+        { "article_number": 170, "article_title": "Kadhis' courts" }
+      ]},
+      { "part_number": 4, "part_title": "Judicial Service Commission", "articles": [
+        { "article_number": 171, "article_title": "Establishment of the Judicial Service Commission" },
+        { "article_number": 172, "article_title": "Functions of the Judicial Service Commission" },
+        { "article_number": 173, "article_title": "Judiciary Fund" }
+      ]}
+    ]
+  },
+  {
+    "chapter_number": 11,
+    "chapter_title": "Devolved Government",
+    "chapter_summary": "Pioneering devolution framework establishing 47 county governments, distributing powers between national and county governments, and empowering local communities through County Assemblies and Governors.",
+    "article_range": "Articles 174 - 200",
+    "article_count": 27,
+    "category": "Governance",
+    "parts": [
+      { "part_number": 1, "part_title": "Objects and Principles of Devolved Government", "articles": [
+        { "article_number": 174, "article_title": "Objects of devolution" },
+        { "article_number": 175, "article_title": "Principles of devolved government" }
+      ]},
+      { "part_number": 2, "part_title": "County Governments", "articles": [
+        { "article_number": 176, "article_title": "County governments" },
+        { "article_number": 177, "article_title": "Membership of county assembly" },
+        { "article_number": 178, "article_title": "Speaker of a county assembly" },
+        { "article_number": 179, "article_title": "County executive committees" },
+        { "article_number": 180, "article_title": "Election of county governor and deputy county governor" },
+        { "article_number": 181, "article_title": "Removal of a county governor" },
+        { "article_number": 182, "article_title": "Vacancy in the office of county governor" },
+        { "article_number": 183, "article_title": "Functions of county executive committees" },
+        { "article_number": 184, "article_title": "Urban areas and cities" },
+        { "article_number": 185, "article_title": "Legislative authority of county assemblies" }
+      ]},
+      { "part_number": 3, "part_title": "Functions and Powers of County Governments", "articles": [
+        { "article_number": 186, "article_title": "Respective functions and powers of national and county governments" },
+        { "article_number": 187, "article_title": "Transfer of functions and powers between levels of government" },
+        { "article_number": 188, "article_title": "Boundaries of counties" },
+        { "article_number": 189, "article_title": "Cooperation between national and county governments" },
+        { "article_number": 190, "article_title": "Support for county governments" },
+        { "article_number": 191, "article_title": "Conflict of laws" }
+      ]},
+      { "part_number": 4, "part_title": "Boundaries of Counties and Suspension", "articles": [
+        { "article_number": 192, "article_title": "Suspension of a county government" }
+      ]},
+      { "part_number": 5, "part_title": "General Provisions on County Governments", "articles": [
+        { "article_number": 193, "article_title": "Qualifications for election as member of county assembly" },
+        { "article_number": 194, "article_title": "Vacation of office of member of county assembly" },
+        { "article_number": 195, "article_title": "County assembly powers, privileges and immunities" },
+        { "article_number": 196, "article_title": "Public access and participation in county assembly" },
+        { "article_number": 197, "article_title": "County assembly gender balance and diversity" },
+        { "article_number": 198, "article_title": "Clerk and staff of county assembly" },
+        { "article_number": 199, "article_title": "Publication of county legislation" },
+        { "article_number": 200, "article_title": "Legislation on chapter" }
+      ]}
+    ]
+  },
+  {
+    "chapter_number": 12,
+    "chapter_title": "Public Finance",
+    "chapter_summary": "Establishes principles of public finance: openness, accountability, equitable sharing of national revenue between national and county governments, Commission on Revenue Allocation (CRA), Controller of Budget, and Auditor-General.",
+    "article_range": "Articles 201 - 231",
+    "article_count": 31,
+    "category": "Finance",
+    "parts": [
+      { "part_number": 1, "part_title": "Principles and Framework of Public Finance", "articles": [
+        { "article_number": 201, "article_title": "Principles of public finance" },
+        { "article_number": 202, "article_title": "Equitable sharing of national revenue" },
+        { "article_number": 203, "article_title": "Equitable share and other financial laws" },
+        { "article_number": 204, "article_title": "Equalisation Fund" },
+        { "article_number": 205, "article_title": "Consultation on financial legislation affecting counties" }
+      ]},
+      { "part_number": 2, "part_title": "Other Public Funds", "articles": [
+        { "article_number": 206, "article_title": "Consolidated Fund" },
+        { "article_number": 207, "article_title": "Revenue Funds for county governments" },
+        { "article_number": 208, "article_title": "Contingencies Fund" }
+      ]},
+      { "part_number": 3, "part_title": "Borrowing and Tax Powers", "articles": [
+        { "article_number": 209, "article_title": "Power to impose taxes and charges" },
+        { "article_number": 210, "article_title": "Imposition of tax" },
+        { "article_number": 211, "article_title": "Borrowing by national government" },
+        { "article_number": 212, "article_title": "Borrowing by counties" },
+        { "article_number": 213, "article_title": "Loan guarantees by national government" },
+        { "article_number": 214, "article_title": "Public debt" }
+      ]},
+      { "part_number": 4, "part_title": "Revenue Allocation", "articles": [
+        { "article_number": 215, "article_title": "Commission on Revenue Allocation" },
+        { "article_number": 216, "article_title": "Functions of the Commission on Revenue Allocation" },
+        { "article_number": 217, "article_title": "Division of revenue" },
+        { "article_number": 218, "article_title": "Annual Division and Allocation of Revenue Bills" },
+        { "article_number": 219, "article_title": "Transfer of equitable share" }
+      ]},
+      { "part_number": 5, "part_title": "Budgets and Spending", "articles": [
+        { "article_number": 220, "article_title": "Form, content and timing of budgets" },
+        { "article_number": 221, "article_title": "Budget estimates and annual Appropriation Bill" },
+        { "article_number": 222, "article_title": "Expenditure before annual budget is passed" },
+        { "article_number": 223, "article_title": "Supplementary expenditure" },
+        { "article_number": 224, "article_title": "County appropriation Bills" }
+      ]},
+      { "part_number": 6, "part_title": "Financial Control and Accounting", "articles": [
+        { "article_number": 225, "article_title": "Financial control" },
+        { "article_number": 226, "article_title": "Accounts and audit of public entities" },
+        { "article_number": 227, "article_title": "Procurement of public goods and services" },
+        { "article_number": 228, "article_title": "Controller of Budget" },
+        { "article_number": 229, "article_title": "Auditor-General" },
+        { "article_number": 230, "article_title": "Salaries and Remuneration Commission" },
+        { "article_number": 231, "article_title": "Central Bank of Kenya" }
+      ]}
+    ]
+  },
+  {
+    "chapter_number": 13,
+    "chapter_title": "The Public Service",
+    "chapter_summary": "Sets values and principles of public service (professional ethics, efficiency, diversity, fairness), defines the Public Service Commission (PSC), and establishes the Teachers Service Commission (TSC).",
+    "article_range": "Articles 232 - 237",
+    "article_count": 6,
+    "category": "Governance",
+    "parts": [
+      { "part_number": 1, "part_title": "Values and Principles of Public Service", "articles": [
+        { "article_number": 232, "article_title": "Values and principles of public service" }
+      ]},
+      { "part_number": 2, "part_title": "The Public Service Commission", "articles": [
+        { "article_number": 233, "article_title": "The Public Service Commission" },
+        { "article_number": 234, "article_title": "Functions and powers of the Public Service Commission" },
+        { "article_number": 235, "article_title": "Staffing of county governments" },
+        { "article_number": 236, "article_title": "Protection of public officers" }
+      ]},
+      { "part_number": 3, "part_title": "Teachers Service Commission", "articles": [
+        { "article_number": 237, "article_title": "Teachers Service Commission" }
+      ]}
+    ]
+  },
+  {
+    "chapter_number": 14,
+    "chapter_title": "National Security",
+    "chapter_summary": "Governs national security organs subject to civilian authority and the Constitution: Kenya Defence Forces (KDF), National Intelligence Service (NIS), and National Police Service (NPS) with civilian oversight.",
+    "article_range": "Articles 238 - 247",
+    "article_count": 10,
+    "category": "Security",
+    "parts": [
+      { "part_number": 1, "part_title": "National Security Organs", "articles": [
+        { "article_number": 238, "article_title": "Principles of national security" },
+        { "article_number": 239, "article_title": "National security organs" },
+        { "article_number": 240, "article_title": "Establishment of the National Security Council" }
+      ]},
+      { "part_number": 2, "part_title": "The Kenya Defence Forces", "articles": [
+        { "article_number": 241, "article_title": "Establishment of Defence Forces and Defence Council" }
+      ]},
+      { "part_number": 3, "part_title": "The National Intelligence Service", "articles": [
+        { "article_number": 242, "article_title": "Establishment of National Intelligence Service" }
+      ]},
+      { "part_number": 4, "part_title": "The National Police Service", "articles": [
+        { "article_number": 243, "article_title": "Establishment of the National Police Service" },
+        { "article_number": 244, "article_title": "Objects and functions of the National Police Service" },
+        { "article_number": 245, "article_title": "Command of the National Police Service" },
+        { "article_number": 246, "article_title": "National Police Service Commission" },
+        { "article_number": 247, "article_title": "Other police services" }
+      ]}
+    ]
+  },
+  {
+    "chapter_number": 15,
+    "chapter_title": "Commissions and Independent Offices",
+    "chapter_summary": "Protects the independence of constitutional commissions and independent offices (KNCHR, NLC, IEBC, PSC, JSC, CRA, TSC, SRC, NPSC; Auditor-General, Controller of Budget), ensuring they are subject only to the Constitution and the law.",
+    "article_range": "Articles 248 - 254",
+    "article_count": 7,
+    "category": "Governance",
+    "articles": [
+      { "article_number": 248, "article_title": "Application of Chapter" },
+      { "article_number": 249, "article_title": "Objects, authority and funding of commissions and independent offices" },
+      { "article_number": 250, "article_title": "Composition, appointment and terms of office" },
+      { "article_number": 251, "article_title": "Removal from office" },
+      { "article_number": 252, "article_title": "General functions and powers" },
+      { "article_number": 253, "article_title": "Incorporation of commissions" },
+      { "article_number": 254, "article_title": "Reporting by commissions and independent offices" }
+    ]
+  },
+  {
+    "chapter_number": 16,
+    "chapter_title": "Amendment of this Constitution",
+    "chapter_summary": "Specifies strict procedures for amending the Constitution by parliamentary initiative or popular initiative (referendum requirements for fundamental pillars such as sovereignty, territory, the Bill of Rights, and devolution).",
+    "article_range": "Articles 255 - 257",
+    "article_count": 3,
+    "category": "Governance",
+    "articles": [
+      { "article_number": 255, "article_title": "Amendment of this Constitution" },
+      { "article_number": 256, "article_title": "Amendment by parliamentary initiative" },
+      { "article_number": 257, "article_title": "Amendment by popular initiative" }
+    ]
+  },
+  {
+    "chapter_number": 17,
+    "chapter_title": "General Provisions",
+    "chapter_summary": "Provides rules of constitutional interpretation, standing to enforce rights (broad locus standi for public interest litigation), and official legal definitions.",
+    "article_range": "Articles 258 - 260",
+    "article_count": 3,
+    "category": "Governance",
+    "articles": [
+      { "article_number": 258, "article_title": "Enforcement of this Constitution" },
+      { "article_number": 259, "article_title": "Construing this Constitution" },
+      { "article_number": 260, "article_title": "Interpretation" }
+    ]
+  },
+  {
+    "chapter_number": 18,
+    "chapter_title": "Transitional and Consequential Provisions",
+    "chapter_summary": "Ensures smooth transition from the former Constitution to the 2010 Constitution, outlines consequential legislation timelines, and establishes the effective date (27 August 2010).",
+    "article_range": "Articles 261 - 264",
+    "article_count": 4,
+    "category": "Governance",
+    "articles": [
+      { "article_number": 261, "article_title": "Consequential legislation" },
+      { "article_number": 262, "article_title": "Transitional and consequential provisions" },
+      { "article_number": 263, "article_title": "Effective date" },
+      { "article_number": 264, "article_title": "Repeal of the previous Constitution" }
+    ]
+  }
+]
