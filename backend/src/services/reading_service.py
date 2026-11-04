@@ -1,0 +1,665 @@
+from typing import Optional, List, Dict, Any, Union
+import uuid
+from datetime import datetime, date, timedelta
+from fastapi import HTTPException, status, Depends
+from sqlalchemy import select, func, update, delete, and_, or_, String
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
+from src.database import get_db
+from src.models.user_models import User, ReadingHistory
+from src.schemas.user_schemas import ReadingHistoryCreate, ReadingHistoryUpdate
+from src.utils.logging.activity_logger import ActivityLogger
+from src.utils.content_id import is_valid_content_id, parse_content_id, get_content_type
+
+
+class ReadingService:
+    """
+    Service for handling reading-related operations including history,
+    progress tracking, and streak calculations
+    """
+    
+    def __init__(self, db: AsyncSession):
+        self.db = db
+        self.activity_logger = ActivityLogger()
+    
+    async def get_reading_history(self, user_id: uuid.UUID, content_id: Optional[str] = None) -> List[ReadingHistory]:
+        """
+        Get reading history for a user
+        
+        Args:
+            user_id: User ID
+            content_id: Optional standardized content ID to filter by
+            
+        Returns:
+            List of reading history entries
+        """
+        query = select(ReadingHistory).where(ReadingHistory.user_id == user_id)
+        
+        # Apply content_id filter if provided
+        if content_id:
+            if is_valid_content_id(content_id):
+                query = query.where(ReadingHistory.content_id == content_id)
+            else:
+                # If content_id is not valid, return empty list
+                return []
+                
+        query = query.order_by(ReadingHistory.started_at.desc())
+        result = await self.db.execute(query)
+        return result.scalars().all()
+    
+    async def get_reading_history_by_id(
+        self, history_id: uuid.UUID, user_id: uuid.UUID
+    ) -> Optional[ReadingHistory]:
+        """
+        Get reading history entry by ID
+        
+        Args:
+            history_id: Reading history ID
+            user_id: User ID for verification
+            
+        Returns:
+            Reading history entry if found, None otherwise
+        """
+        query = (
+            select(ReadingHistory)
+            .where(
+                ReadingHistory.id == history_id,
+                ReadingHistory.user_id == user_id
+            )
+        )
+        result = await self.db.execute(query)
+        return result.scalars().first()
+    
+    async def get_reading_history_by_content(
+        self, content_id: str, user_id: uuid.UUID
+    ) -> Optional[ReadingHistory]:
+        """
+        Get reading history entry by standardized content ID
+        
+        Args:
+            content_id: Standardized content ID
+            user_id: User ID for verification
+            
+        Returns:
+            Reading history entry if found, None otherwise
+        """
+        if not is_valid_content_id(content_id):
+            return None
+            
+        content_type = get_content_type(content_id)
+        if not content_type:
+            return None
+            
+        query = (
+            select(ReadingHistory)
+            .where(
+                ReadingHistory.content_id == content_id,
+                ReadingHistory.content_type == content_type,
+                ReadingHistory.user_id == user_id
+            )
+            .order_by(ReadingHistory.started_at.desc())
+        )
+        result = await self.db.execute(query)
+        return result.scalars().first()
+    
+    async def create_reading_history(
+        self, user_id: uuid.UUID, history_data: ReadingHistoryCreate
+    ) -> ReadingHistory:
+        """
+        Create a reading history entry
+        
+        Args:
+            user_id: User ID
+            history_data: Reading history data
+            
+        Returns:
+            Created reading history entry
+        """
+        # Validate content ID
+        if not is_valid_content_id(history_data.content_id):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid content ID format"
+            )
+            
+        # Calculate progress percentage
+        progress_percentage = 0.0
+        if history_data.total_length > 0:
+            progress_percentage = (history_data.position / history_data.total_length) * 100.0
+            
+        # Create reading history entry
+        reading_history = ReadingHistory(
+            user_id=user_id,
+            content_id=history_data.content_id,
+            content_type=history_data.content_type,
+            time_spent_seconds=history_data.time_spent_seconds,
+            position=history_data.position,
+            total_length=history_data.total_length,
+            progress_percentage=progress_percentage,
+            device_type=history_data.device_type,
+            reading_mode=history_data.reading_mode,
+            read_at=datetime.now()
+        )
+        
+        self.db.add(reading_history)
+        await self.db.commit()
+        await self.db.refresh(reading_history)
+        
+        # Log activity
+        await self.activity_logger.log_activity(
+            f"User started reading content of type '{history_data.content_type}'",
+            user_id=str(user_id),
+            activity_type="reading_started",
+            metadata={
+                "reading_history_id": str(reading_history.id),
+                "content_id": history_data.content_id,
+                "content_type": history_data.content_type,
+                "device_type": str(history_data.device_type) if history_data.device_type else None,
+                "reading_mode": str(history_data.reading_mode) if history_data.reading_mode else None
+            }
+        )
+        
+        # Update user reading stats
+        await self._update_user_reading_stats(
+            user_id, 
+            reading_time_seconds=history_data.time_spent_seconds
+        )
+        
+        return reading_history
+    
+    async def update_reading_history(
+        self, history_id: uuid.UUID, user_id: uuid.UUID, history_data: ReadingHistoryUpdate
+    ) -> ReadingHistory:
+        """
+        Update a reading history entry
+        
+        Args:
+            history_id: Reading history ID
+            user_id: User ID for verification
+            history_data: Reading history update data
+            
+        Returns:
+            Updated reading history entry
+            
+        Raises:
+            HTTPException: If reading history entry not found
+        """
+        # Get reading history entry
+        reading_history = await self.get_reading_history_by_id(history_id, user_id)
+        if not reading_history:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Reading history entry not found"
+            )
+        
+        # Update fields if provided
+        update_data = history_data.dict(exclude_unset=True)
+        for key, value in update_data.items():
+            setattr(reading_history, key, value)
+        
+        # If completed_at is provided, update user stats
+        if history_data.completed_at and not reading_history.completed_at:
+            await self._update_user_reading_stats(
+                user_id, 
+                reading_time_seconds=history_data.reading_time_seconds
+            )
+        
+        await self.db.commit()
+        await self.db.refresh(reading_history)
+        
+        # Log activity
+        activity_type = "reading_updated"
+        if history_data.completed_at and not reading_history.completed_at:
+            activity_type = "reading_completed"
+        
+        await self.activity_logger.log_activity(
+            f"User updated reading progress to {reading_history.progress_percentage}%",
+            user_id=str(user_id),
+            activity_type=activity_type,
+            metadata={
+                "reading_history_id": str(history_id),
+                "updated_fields": list(update_data.keys()),
+                "progress_percentage": reading_history.progress_percentage,
+                "completed": reading_history.completed_at is not None
+            }
+        )
+        
+        return reading_history
+    
+    async def _update_user_reading_stats(
+        self, user_id: uuid.UUID, reading_time_seconds: Optional[int] = None
+    ) -> None:
+        """
+        Update user reading stats when a reading session is completed
+        
+        Args:
+            user_id: User ID
+            reading_time_seconds: Reading time in seconds (renamed from time_spent_seconds for backward compatibility)
+        """
+        # Get user
+        query = select(User).where(User.id == user_id)
+        result = await self.db.execute(query)
+        user = result.scalars().first()
+        
+        if not user:
+            return
+        
+        # Update total content read
+        user.total_content_read += 1
+        
+        # Update total reading time
+        if reading_time_seconds:
+            user.total_reading_time_minutes += reading_time_seconds // 60
+        
+        # Update last read date
+        today = date.today()
+        user.last_read_date = today
+        
+        # Update streak
+        if user.last_read_date:
+            yesterday = today - timedelta(days=1)
+            if user.last_read_date == yesterday:
+                # Continuing streak
+                user.streak_days += 1
+            elif user.last_read_date < yesterday:
+                # Streak broken, start new streak
+                user.streak_days = 1
+            # If same day, streak stays the same
+        else:
+            # First reading, start streak
+            user.streak_days = 1
+        
+        await self.db.commit()
+    
+    async def get_reading_stats(self, user_id: uuid.UUID) -> Dict[str, Any]:
+        """
+        Get reading statistics for a user
+        
+        Args:
+            user_id: User ID
+            
+        Returns:
+            Dictionary of reading statistics
+        """
+        # Get user
+        query = select(User).where(User.id == user_id)
+        result = await self.db.execute(query)
+        user = result.scalars().first()
+        
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="User not found"
+            )
+        
+        # Get reading history counts
+        query = (
+            select(func.count())
+            .select_from(ReadingHistory)
+            .where(ReadingHistory.user_id == user_id)
+        )
+        result = await self.db.execute(query)
+        total_sessions = result.scalar() or 0
+        
+        # Get completed reading history counts
+        query = (
+            select(func.count())
+            .select_from(ReadingHistory)
+            .where(
+                ReadingHistory.user_id == user_id,
+                ReadingHistory.completed_at.isnot(None)
+            )
+        )
+        result = await self.db.execute(query)
+        completed_sessions = result.scalar() or 0
+        
+        # Get average reading time
+        query = (
+            select(func.avg(ReadingHistory.reading_time_seconds))
+            .select_from(ReadingHistory)
+            .where(
+                ReadingHistory.user_id == user_id,
+                ReadingHistory.reading_time_seconds.isnot(None)
+            )
+        )
+        result = await self.db.execute(query)
+        avg_reading_time = result.scalar() or 0
+        
+        # Get reading by content type
+        query = (
+            select(
+                ReadingHistory.content_type,
+                func.count().label("count")
+            )
+            .where(ReadingHistory.user_id == user_id)
+            .group_by(ReadingHistory.content_type)
+        )
+        result = await self.db.execute(query)
+        content_type_counts = {row[0]: row[1] for row in result.all()}
+        
+        # Get reading by device type
+        query = (
+            select(
+                ReadingHistory.device_type,
+                func.count().label("count")
+            )
+            .where(
+                ReadingHistory.user_id == user_id,
+                ReadingHistory.device_type.isnot(None)
+            )
+            .group_by(ReadingHistory.device_type)
+        )
+        result = await self.db.execute(query)
+        device_type_counts = {row[0]: row[1] for row in result.all()}
+        
+        # Get reading by mode
+        query = (
+            select(
+                ReadingHistory.reading_mode,
+                func.count().label("count")
+            )
+            .where(
+                ReadingHistory.user_id == user_id,
+                ReadingHistory.reading_mode.isnot(None)
+            )
+            .group_by(ReadingHistory.reading_mode)
+        )
+        result = await self.db.execute(query)
+        reading_mode_counts = {row[0]: row[1] for row in result.all()}
+        
+        # Calculate completion rate
+        completion_rate = 0
+        if total_sessions > 0:
+            completion_rate = (completed_sessions / total_sessions) * 100
+        
+        return {
+            "total_content_read": user.total_content_read,
+            "total_reading_time_minutes": user.total_reading_time_minutes,
+            "streak_days": user.streak_days,
+            "last_read_date": user.last_read_date,
+            "total_sessions": total_sessions,
+            "completed_sessions": completed_sessions,
+            "completion_rate": completion_rate,
+            "avg_reading_time_seconds": avg_reading_time,
+            "content_type_breakdown": content_type_counts,
+            "device_type_breakdown": device_type_counts,
+            "reading_mode_breakdown": reading_mode_counts
+        }
+    
+    async def get_reading_progress(
+        self, user_id: uuid.UUID, content_id: str
+    ) -> Dict[str, Any]:
+        """
+        Get reading progress for a specific content
+        
+        Args:
+            user_id: User ID
+            content_id: Standardized content ID
+            
+        Returns:
+            Dictionary with progress data including percentage, position, and last read time
+        """
+        # Validate content ID
+        if not is_valid_content_id(content_id):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Invalid content ID format"
+            )
+            
+        # Get the latest reading history entry for this content
+        latest_entry = await self.get_reading_history_by_content(content_id, user_id)
+        
+        if not latest_entry:
+            # No reading history found, return default values
+            return {
+                "progress_percentage": 0.0,
+                "last_position": 0.0,
+                "last_read_at": None
+            }
+            
+        return {
+            "progress_percentage": float(latest_entry.progress_percentage),
+            "last_position": float(latest_entry.position),
+            "last_read_at": latest_entry.read_at
+        }
+        
+    async def get_reading_streak_calendar(
+        self, user_id: uuid.UUID, year: int, month: int
+    ) -> Dict[str, Any]:
+        """
+        Get reading streak calendar for a specific month
+        
+        Args:
+            user_id: User ID
+            year: Year
+            month: Month (1-12)
+            
+        Returns:
+            Dictionary with calendar data
+        """
+        # Validate month
+        if month < 1 or month > 12:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Month must be between 1 and 12"
+            )
+        
+        # Get first and last day of month
+        first_day = date(year, month, 1)
+        if month == 12:
+            last_day = date(year + 1, 1, 1) - timedelta(days=1)
+        else:
+            last_day = date(year, month + 1, 1) - timedelta(days=1)
+        
+        # Get all reading history entries for the month
+        query = (
+            select(
+                func.date(ReadingHistory.started_at).label("reading_date"),
+                func.count().label("count")
+            )
+            .where(
+                ReadingHistory.user_id == user_id,
+                func.date(ReadingHistory.started_at) >= first_day,
+                func.date(ReadingHistory.started_at) <= last_day
+            )
+            .group_by("reading_date")
+        )
+        result = await self.db.execute(query)
+        reading_dates = {row[0]: row[1] for row in result.all()}
+        
+        # Create calendar data
+        calendar_data = {}
+        current_date = first_day
+        while current_date <= last_day:
+            day_str = current_date.isoformat()
+            calendar_data[day_str] = reading_dates.get(current_date, 0)
+            current_date += timedelta(days=1)
+        
+        # Get user streak info
+        query = select(User).where(User.id == user_id)
+        result = await self.db.execute(query)
+        user = result.scalars().first()
+        
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="User not found"
+            )
+        
+        return {
+            "year": year,
+            "month": month,
+            "calendar_data": calendar_data,
+            "current_streak": user.streak_days,
+            "last_read_date": user.last_read_date.isoformat() if user.last_read_date else None
+        }
+
+    async def get_reading_analytics(self, user_id: uuid.UUID, period: str) -> Dict[str, Any]:
+        """
+        Get reading analytics for a specific period
+        
+        Args:
+            user_id: User ID
+            period: Time period ('week', 'month', 'year')
+            
+        Returns:
+            Dictionary containing analytics data
+        """
+        now = datetime.now()
+        
+        if period == "week":
+            start_date = now - timedelta(days=7)
+            chart_data = await self._get_daily_reading_data(user_id, start_date, now)
+        elif period == "month":
+            start_date = now - timedelta(days=30)
+            chart_data = await self._get_daily_reading_data(user_id, start_date, now)
+        else:  # year
+            start_date = now - timedelta(days=365)
+            chart_data = await self._get_monthly_reading_data(user_id, start_date, now)
+        
+        # Get user for streak info
+        user = await self.db.get(User, user_id)
+        
+        return {
+            "period": period,
+            "chart_data": chart_data,
+            "current_streak": user.streak_days if user else 0,
+            "start_date": start_date.isoformat(),
+            "end_date": now.isoformat()
+        }
+
+    async def _get_daily_reading_data(self, user_id: uuid.UUID, start_date: datetime, end_date: datetime) -> List[Dict[str, Any]]:
+        """Get daily reading data for charts"""
+        query = select(
+            func.date(ReadingHistory.read_at).label('date'),
+            func.sum(ReadingHistory.time_spent_seconds).label('total_seconds')
+        ).where(
+            ReadingHistory.user_id == user_id,
+            ReadingHistory.read_at >= start_date,
+            ReadingHistory.read_at <= end_date
+        ).group_by(
+            func.date(ReadingHistory.read_at)
+        ).order_by(
+            func.date(ReadingHistory.read_at)
+        )
+        
+        result = await self.db.execute(query)
+        reading_data = result.all()
+        
+        # Create a complete dataset with all days
+        current_date = start_date.date()
+        end_date_date = end_date.date()
+        chart_data = []
+        
+        reading_dict = {row.date: row.total_seconds or 0 for row in reading_data}
+        
+        while current_date <= end_date_date:
+            seconds = reading_dict.get(current_date, 0)
+            minutes = round(seconds / 60, 1)
+            
+            chart_data.append({
+                "date": current_date.isoformat(),
+                "day": current_date.strftime("%a"),
+                "reading_time_minutes": minutes,
+                "percentage": min(100, (minutes / 60) * 100)  # Normalize to 0-100% based on 1 hour max
+            })
+            
+            current_date += timedelta(days=1)
+        
+        return chart_data
+
+    async def _get_monthly_reading_data(self, user_id: uuid.UUID, start_date: datetime, end_date: datetime) -> List[Dict[str, Any]]:
+        """Get monthly reading data for yearly charts"""
+        # Use extract functions instead of date_trunc to avoid PostgreSQL-specific issues
+        query = select(
+            func.extract('year', ReadingHistory.read_at).label('year'),
+            func.extract('month', ReadingHistory.read_at).label('month'),
+            func.sum(ReadingHistory.time_spent_seconds).label('total_seconds')
+        ).where(
+            ReadingHistory.user_id == user_id,
+            ReadingHistory.read_at >= start_date,
+            ReadingHistory.read_at <= end_date
+        ).group_by(
+            func.extract('year', ReadingHistory.read_at),
+            func.extract('month', ReadingHistory.read_at)
+        ).order_by(
+            func.extract('year', ReadingHistory.read_at),
+            func.extract('month', ReadingHistory.read_at)
+        )
+        
+        result = await self.db.execute(query)
+        reading_data = result.all()
+        
+        chart_data = []
+        for row in reading_data:
+            year = int(row.year)
+            month = int(row.month)
+            seconds = row.total_seconds or 0
+            hours = round(seconds / 3600, 1)
+            
+            # Create datetime object for formatting
+            try:
+                month_date = date(year, month, 1)
+                chart_data.append({
+                    "month": month_date.strftime("%Y-%m"),
+                    "month_name": month_date.strftime("%b"),
+                    "reading_time_hours": hours,
+                    "percentage": min(100, (hours / 10) * 100)  # Normalize to 0-100% based on 10 hours max
+                })
+            except ValueError:
+                # Skip invalid dates
+                continue
+        
+        return chart_data
+
+    async def get_reading_streak(self, user_id: uuid.UUID) -> Dict[str, Any]:
+        """
+        Get reading streak information for a user
+        
+        Args:
+            user_id: User ID
+            
+        Returns:
+            Dictionary containing streak information
+        """
+        # Get user
+        user = await self.db.get(User, user_id)
+        
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="User not found"
+            )
+        
+        # Calculate if streak is maintained (read today or yesterday)
+        today = date.today()
+        yesterday = today - timedelta(days=1)
+        
+        streak_maintained = False
+        if user.last_read_date:
+            streak_maintained = user.last_read_date >= yesterday
+        
+        # For now, longest streak is same as current streak
+        # In future, you might want to track this separately
+        longest_streak = user.streak_days
+        
+        return {
+            "current_streak": user.streak_days,
+            "longest_streak": longest_streak,
+            "last_read_date": user.last_read_date.isoformat() if user.last_read_date else None,
+            "streak_maintained": streak_maintained
+        }
+
+
+# Dependency to get ReadingService
+async def get_reading_service(db: AsyncSession = Depends(get_db)) -> ReadingService:
+    """
+    Dependency to get ReadingService instance
+    
+    Args:
+        db: Database session
+        
+    Returns:
+        ReadingService instance
+    """
+    return ReadingService(db)

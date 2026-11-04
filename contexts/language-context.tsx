@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, useEffect, useMemo, type ReactNode } from "react"
+import { createContext, useContext, useState, useEffect, useMemo, useCallback, type ReactNode } from "react"
 
 // Import translation files
 import enTranslations from "@/translations/en.json"
